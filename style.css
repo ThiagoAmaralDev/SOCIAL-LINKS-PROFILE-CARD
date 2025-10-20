@@ -1,0 +1,148 @@
+:root {
+    --cor-fundo-principal: #141414;
+    --cor-card: #1f1f1f;
+    --cor-botoes: #333333;
+    --cor-destaque: #c5f82a; /*VERDE*/
+    --cor-texto-principal: #ffffff;
+    --cor-texto-secundario: #a0a0a0;
+
+    /* Font Weights */
+
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    /* Espaçamentos e Bordas */
+
+    --espacamento-vertical-links: 16px;
+    --borda-raio-padrao: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif; 
+}
+
+/*Importando fonte*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Gerais */
+
+body {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    
+    /* 1. Transforma o body em um container flex */
+    display: flex;
+    /* 2. Centraliza os itens (o #principal) horizontalmente */
+    justify-content: center;
+    /* 3. Centraliza os itens (o #principal) verticalmente */
+    align-items: center;
+    /* 4. Garante que o body ocupe 100% da altura visível da tela (viewport) */
+    min-height: 100vh;
+
+    flex-wrap: nowrap;
+}
+
+ul {
+    list-style: none;
+    
+}
+
+img {
+    border-radius: 100px;
+    height: 80px;
+    width: 80px;
+}
+
+p {
+    font-weight: var(--fw-regular);
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: var(--espacamento-vertical-links);
+
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li a {
+    display: block; /* Torna o link um bloco para preencher 100% do li */  
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+
+    /* Estilos de Botão */
+    background-color: var(--cor-botoes);
+    padding: 13px;
+    border-radius: var(--borda-raio-padrao);
+    text-align: center;
+    font-weight: var(--fw-bold);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    
+}
+
+li a:hover
+ {
+
+    background-color: var(--cor-destaque);
+    color: var(--cor-botoes);
+    outline: 2px solid var(--cor-destaque); /* Adiciona um contorno sutil no foco/hover */
+    outline-offset: -2px; /* Traz o contorno para dentro da borda */
+    
+
+}
+
+
+/* ID'S */
+    /* O elemento #principal não precisa mais de Flexbox se o body for o container principal,
+    mas podemos mantê-lo ou removê-lo. Se você o remover, o #quadrado deve ser filho direto do body. */
+
+#quadrado {
+    
+    background-color: var(--cor-card);
+    text-align: center;
+    padding: 30px;
+
+
+    /* CORREÇÃO CRÍTICA (Passo 2): Remove altura fixa e adiciona responsividade */
+    max-width: 380px; 
+    width: 90%; 
+    /* REMOVIDO: height: 610px; */ 
+    /* REMOVIDO: width: 400px; */
+
+    border-radius: 10px;
+    
+}
+
+#textos {
+    margin: 25px;
+    
+}
+
+/* CLASSES */
+
+.logo {
+    
+    margin: 10px;
+    
+    
+}
+
+.titulo {
+    font-weight: var(--fw-bold);
+}
+
+.paragrafo-1 {
+    margin: 5px 0 20px 0;
+    color: var(--cor-destaque);
+    font-weight: var(--fw-semi-bold);
+}
+
